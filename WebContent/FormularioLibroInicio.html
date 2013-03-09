@@ -3,27 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<style type="text/css">
-		body {
-			font-weight:bold;
-		}
-	</style>
-	<script type="text/javascript">
-		function validacion() {
-			var isbn=document.getElementById("isbn");
-			var miformulario=document.getElementById("miformulario")
-			if (isbn.value == ""){
-				alert("Datos no válidos");
-				return false;
-			}else{				
-				miformulario.submit();
-			}
-		}
-	</script>
+	<link rel="stylesheet" type="text/css" href="css/formato.cc"/>
+	<script type="text/javascript" src="js/validacion.js"></script>
 	<title>Formulario Libro</title>
 </head>
 <body>
-	<form id="miformulario" action="insertarLibro.jsp">
+	<form id="miformulario" action="destino.html" onsubmit="return validacion()">
 		<fieldset>
 			<legend>Formulario Alta Libro</legend>		
 			<p>
@@ -39,7 +24,7 @@
 				<input id="categoria" type="text" name="categoria"/>
 			</p>
 			<p>
-				<input type="button" value="Insertar" onclick="validacion()"/>
+				<input type="submit" value="Insertar"/>
 			</p>
 		</fieldset>
 	</form>
